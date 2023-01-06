@@ -99,9 +99,11 @@ Yiwen Zhang (yiwenzhg@umich.edu)
 # Running on Cloudlab
 The file `cloudlab_minimal_setup.rspec` contains a definition of a minimal project.
 Go to [CloudLab Profiles](https://www.cloudlab.us/manage_profile.php) and create a new profile based on the aforementioned file.
-The profile defines two bare-metal `m510` machines (see [here](https://docs.cloudlab.us/hardware.html) for more info), running Ubuntu 14.04 with Mellanox Drivers. They are connected via Ethernet.
+
+The profile defines two bare-metal `m510` machines (see [here](https://docs.cloudlab.us/hardware.html) for more info), running Ubuntu 18.04. The two machines are connected via Ethernet.
 The profile only describes these resources; to actually get them running, it needs to be instantiated.
 After instantiating the profile, we have a running experiment (*instance of a profile*, in Cloudlab terminology).
+
 Then, we need to install OFED drivers, which are needed for RDMA, on **both** of the bare-metal machines we spun up.
 To do so, first follow the steps outlined in the [Mellanox manual](https://docs.nvidia.com/networking/display/MLNXENv496060LTS/Downloading+Mellanox+OFED) to download the needed `ISO`.
 Note: Given that the `m510` machines use Mellanox ConnectX-3 10 GB NICs, you need to select a version complying with **MLNX_OFED 4.9-x LTS**.
